@@ -1,33 +1,33 @@
 # natural_language_processing
 
 ## Project Overview
-A repository dedicated to exploring Natural Language Processing (NLP) techniques and Web Scraping methodologies.
+This repository contains a comprehensive suite of Natural Language Processing (NLP) implementations and web scraping utilities. It covers fundamental NLP preprocessing techniques, feature extraction methods, and a robust SMS spam detection system. Additionally, it includes advanced web scraping scripts designed to collect historical weather data.
 
-## What is this Project?
-This project serves as a practical toolkit and learning workspace. It contains scripts and notebooks that demonstrate how to extract data from websites (web scraping) and subsequently process and analyze text data using fundamental NLP algorithms.
+## Deep Technical Details
 
-## How it was done
-The codebase is divided into two main domains. The `web_scrapping` directory likely uses libraries like BeautifulSoup or Selenium to gather raw data from the internet. The `natural_language_processing` directory contains Python scripts and Jupyter notebooks implementing text tokenization, stemming/lemmatization, TF-IDF, and possibly basic classification models using NLTK or Scikit-learn.
+### 1. Natural Language Processing (NLP)
+The repository implements a modular approach to text processing and classification:
+- **Text Preprocessing:** Robust cleaning pipelines using `Regex` for noise removal, alongside `NLTK` for Tokenization, Stemming (Porter Stemmer), and Lemmatization (WordNet Lemmatizer).
+- **Feature Engineering:** 
+  - **Bag of Words (BoW):** Utilizing `CountVectorizer` to transform text into numerical vectors.
+  - **TF-IDF:** Implementing `TfidfVectorizer` for importance-based word weighting.
+- **Classification Model:** A high-accuracy SMS Spam Detection system built using the **Multinomial Naive Bayes (MultinomialNB)** algorithm from `Scikit-learn`. The pipeline involves text cleaning, vectorization, and model training/evaluation, achieving a reported accuracy of ~98.2%.
 
-## Why it was done
-To build a foundational understanding of the data pipeline: from gathering unstructured text data via web scraping to structuring and analyzing it using NLP.
+### 2. Web Scraping Pipeline
+The `web_scrapping` module focuses on automated data extraction:
+- **Dynamic Content Handling:** Uses `Selenium WebDriver` to navigate and interact with `timeanddate.com`.
+- **Data Extraction:** Iteratively scrapes historical weather metrics including:
+    - Temperature
+    - Wind Speed
+    - Humidity
+    - Atmospheric Pressure
+    - Visibility
+- **Automation:** Scripts are designed to handle multi-year and multi-month data ranges, with built-in error handling and `time.sleep` intervals to manage request throttling.
 
 ## Tech Stack
-- Python
-- NLTK / Spacy (for NLP)
-- BeautifulSoup / Requests (for Web Scraping)
-- Jupyter Notebook
-
-## Key Features
-- Scripts for automating data extraction from web pages.
-- Implementations of foundational NLP processing steps.
-- Demonstrative notebooks for textual data analysis.
-
-## File Structure
-- `natural_language_processing/`: Contains code for text processing, tokenization, and vectorization.
-- `web_scrapping/`: Contains scripts designed to extract information from websites.
-
-## Local Setup (if applicable)
-1. Clone the repository.
-2. Install dependencies: `pip install beautifulsoup4 requests nltk pandas numpy scikit-learn jupyter`.
-3. Navigate to the respective directories to run the scraping scripts or NLP notebooks.
+- **Languages:** Python
+- **NLP Libraries:** NLTK, Regex
+- **Machine Learning:** Scikit-learn (Naive Bayes, Vectorizers, Metrics)
+- **Data Manipulation:** Pandas, NumPy
+- **Web Scraping:** Selenium, CSV
+- **Notebooks:** Jupyter Notebook (.ipynb)
